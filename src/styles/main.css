@@ -1,0 +1,20 @@
+/* Global styles for the landing. Component-level styling lives inline in index.html. */
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#FFF6F0; cursor:auto; }
+::selection { background:#FF2D9E; color:#fff; }
+@keyframes cm-marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@keyframes cm-marquee-rev { from { transform:translateX(-50%); } to { transform:translateX(0); } }
+@keyframes cm-float { 0%,100% { transform:translateY(0) rotate(var(--r,0deg)); } 50% { transform:translateY(-18px) rotate(var(--r,0deg)); } }
+@keyframes cm-spin { from { transform:rotate(0); } to { transform:rotate(360deg); } }
+@keyframes cm-wob { 0%,100% { transform:rotate(-8deg); } 50% { transform:rotate(8deg); } }
+@keyframes cm-blob { 0%,100% { transform:translate(0,0) scale(1); } 33% { transform:translate(40px,-30px) scale(1.12); } 66% { transform:translate(-30px,20px) scale(0.92); } }
+@keyframes cm-bob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(10px); } }
+@keyframes cm-flipIn { 0% { opacity:0; transform:translateY(60%) rotate(6deg); } 100% { opacity:1; transform:translateY(0) rotate(0); } }
+@keyframes cm-flipOut { 0% { opacity:1; transform:translateY(0) rotate(0); } 100% { opacity:0; transform:translateY(-60%) rotate(-6deg); } }
+.cm-word-in { animation:cm-flipIn .5s cubic-bezier(.2,.9,.2,1) both; }
+.cm-word-out { animation:cm-flipOut .4s cubic-bezier(.7,0,.8,.2) both; }
+h1, h2, h3 { -webkit-text-stroke:0.02em currentColor; text-stroke:0.02em currentColor; }
+image-slot { display:block; }
+@media (max-width:880px){ .cm-hero-grid{ grid-template-columns:1fr !important; } .cm-hero-portrait{ max-width:360px; margin:0 auto; } .cm-about-grid{ grid-template-columns:1fr !important; } }

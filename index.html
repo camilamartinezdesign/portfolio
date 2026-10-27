@@ -1,47 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<template id="__bundler_thumbnail" data-bg-color="#FFF6F0">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#FFF6F0"/>
-    <circle cx="600" cy="360" r="150" fill="#FF2D9E"/>
-    <text x="600" y="415" font-family="Arial, sans-serif" font-size="150" font-weight="800" fill="#ffffff" text-anchor="middle">CM</text>
-    <text x="600" y="560" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#1A1430" text-anchor="middle">✦ camila martínez ✦</text>
-  </svg>
-</template>
-<x-dc>
-<helmet>
+<title>Camila Martínez — Portafolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&amp;display=swap" rel="stylesheet">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { background:#FFF6F0; cursor:auto; }
-  ::selection { background:#FF2D9E; color:#fff; }
-  @keyframes cm-marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
-  @keyframes cm-marquee-rev { from { transform:translateX(-50%); } to { transform:translateX(0); } }
-  @keyframes cm-float { 0%,100% { transform:translateY(0) rotate(var(--r,0deg)); } 50% { transform:translateY(-18px) rotate(var(--r,0deg)); } }
-  @keyframes cm-spin { from { transform:rotate(0); } to { transform:rotate(360deg); } }
-  @keyframes cm-wob { 0%,100% { transform:rotate(-8deg); } 50% { transform:rotate(8deg); } }
-  @keyframes cm-blob { 0%,100% { transform:translate(0,0) scale(1); } 33% { transform:translate(40px,-30px) scale(1.12); } 66% { transform:translate(-30px,20px) scale(0.92); } }
-  @keyframes cm-bob { 0%,100% { transform:translateY(0); } 50% { transform:translateY(10px); } }
-  @keyframes cm-flipIn { 0% { opacity:0; transform:translateY(60%) rotate(6deg); } 100% { opacity:1; transform:translateY(0) rotate(0); } }
-  @keyframes cm-flipOut { 0% { opacity:1; transform:translateY(0) rotate(0); } 100% { opacity:0; transform:translateY(-60%) rotate(-6deg); } }
-  .cm-word-in { animation:cm-flipIn .5s cubic-bezier(.2,.9,.2,1) both; }
-  .cm-word-out { animation:cm-flipOut .4s cubic-bezier(.7,0,.8,.2) both; }
-  h1, h2, h3 { -webkit-text-stroke:0.02em currentColor; text-stroke:0.02em currentColor; }
-  image-slot { display:block; }
-  @media (max-width:880px){ .cm-hero-grid{ grid-template-columns:1fr !important; } .cm-hero-portrait{ max-width:360px; margin:0 auto; } .cm-about-grid{ grid-template-columns:1fr !important; } }
-</style>
-<script src="./image-slot.js"></script>
-<script src="./video-slot.js"></script>
-</helmet>
+<script type="module" src="/src/main.js"></script>
+</head>
+<body>
 
 <div style="font-family:'Poppins',system-ui,sans-serif; color:#1A1430; background:#FFF6F0; overflow-x:hidden; position:relative;">
 
@@ -49,11 +17,11 @@
   <div aria-hidden="true" style="position:fixed; inset:0; z-index:300; pointer-events:none; opacity:0.06; mix-blend-mode:multiply; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);"></div>
 
   <!-- sparkle cursor layer -->
-  <div ref="{{ cursorRef }}" aria-hidden="true" style="position:fixed; inset:0; pointer-events:none; z-index:600; overflow:hidden;"></div>
+  <div data-cursor aria-hidden="true" style="position:fixed; inset:0; pointer-events:none; z-index:600; overflow:hidden;"></div>
   
 
   <!-- scroll progress -->
-  <div ref="{{ progressRef }}" style="position:fixed; top:0; left:0; height:5px; width:0%; background:linear-gradient(90deg,#FF2D9E,#7B3CFF,#D7FF00); z-index:400;"></div>
+  <div data-progress style="position:fixed; top:0; left:0; height:5px; width:0%; background:linear-gradient(90deg,#FF2D9E,#7B3CFF,#D7FF00); z-index:400;"></div>
 
   <!-- NAV -->
   <nav style="position:sticky; top:0; z-index:250; display:flex; align-items:center; justify-content:space-between; padding:14px clamp(18px,5vw,56px); background:rgba(255,246,240,0.78); backdrop-filter:blur(14px); border-bottom:2px solid #1A1430;">
@@ -87,7 +55,7 @@
           <h1 style="font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(58px,9.4vw,178px); line-height:1.08; letter-spacing:0.008em; text-transform:uppercase;">
             DISEÑO QUE<br>
             <span style="display:inline-flex; align-items:baseline; gap:0.14em;">
-              <span ref="{{ rotatorRef }}" style="display:inline-block; color:#FF2D9E; overflow:hidden; vertical-align:bottom; padding-bottom:0.04em;">CONECTA</span>
+              <span data-rotator style="display:inline-block; color:#FF2D9E; overflow:hidden; vertical-align:bottom; padding-bottom:0.04em;">CONECTA</span>
             </span>
           </h1>
           <div style="display:flex; flex-direction:column; align-items:flex-start; gap:clamp(14px,1.8vw,20px); margin-top:clamp(12px,2vw,22px);">
@@ -350,7 +318,7 @@
   </section>
 
   <!-- ===== SUBPÁGINAS DE PROYECTO (overlay) ===== -->
-  <div ref="{{ detailRef }}" style="position:fixed; inset:0; z-index:500; display:none; overflow-y:auto; background:#FFF6F0; -webkit-overflow-scrolling:touch;">
+  <div data-detail style="position:fixed; inset:0; z-index:500; display:none; overflow-y:auto; background:#FFF6F0; -webkit-overflow-scrolling:touch;">
 
     <!-- top bar -->
     <div style="position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:14px clamp(18px,5vw,56px); background:rgba(255,246,240,0.9); backdrop-filter:blur(14px); border-bottom:2px solid #1A1430;">
@@ -388,14 +356,14 @@
           </div>
           <p style="font-size:clamp(15px,1.3vw,18px); line-height:1.65; color:#3a2f4a; max-width:720px; text-align:justify; text-align-last:left; margin-bottom:24px;">Diseño y optimización de flows en Klaviyo (bienvenida, carrito abandonado, winback, post-compra), auditorías de performance por métrica de conversión, y creación de campañas, diseño de plantilla y segmentación.</p>
           <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:clamp(14px,1.6vw,22px);">
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./mesa-de-trabajo-2-mryhl27f-fsay.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./mesa-de-trabajo-2-mryhlf81-9ro3.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./mesa-de-trabajo-2-mryhlpza-oa3l.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./mesa-de-trabajo-2-2x-mryhmbao-gnn0.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./mesa-de-trabajo-2-mryhmjhj-wdbz.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-6" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 6" src="./mesa-de-trabajo-1-2x-mryhn7rl-utgy.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-7" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 7" src="./mesa-de-trabajo-2-2x-mryhnhzg-yn8y.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-8" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 8" src="./mesa-de-trabajo-1-2x-mryhnsik-x5ia.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./images/mesa-de-trabajo-2-mryhl27f-fsay.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./images/mesa-de-trabajo-2-mryhlf81-9ro3.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./images/mesa-de-trabajo-2-mryhlpza-oa3l.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./images/mesa-de-trabajo-2-2x-mryhmbao-gnn0.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./images/mesa-de-trabajo-2-mryhmjhj-wdbz.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-6" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 6" src="./images/mesa-de-trabajo-1-2x-mryhn7rl-utgy.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-7" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 7" src="./images/mesa-de-trabajo-2-2x-mryhnhzg-yn8y.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub1-8" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 8" src="./images/mesa-de-trabajo-1-2x-mryhnsik-x5ia.png"></image-slot></div>
           </div>
         </div>
         <div style="margin-top:clamp(48px,6vw,84px);">
@@ -406,11 +374,11 @@
           <div style="font-size:clamp(15px,1.3vw,18px); line-height:1.65; color:#3a2f4a; max-width:720px; text-align:justify; text-align-last:left; margin-bottom:24px;"><p class="font-claude-response-body break-words whitespace-normal" dir="ltr">Desarrollo end-to-end del programa de fidelización: diseño UI, identidad visual, copy, y flows de comunicaciones. conoce más:&nbsp;https://www.flashy.com.co/pages/flashy-divas</p>
 <h3 dir="ltr" class="text-text-100 mt-3 -mb-1 text-[1.125rem] font-bold"></h3></div>
           <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:clamp(14px,1.6vw,22px);">
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./captura-de-pantalla-2026-07-24-a-la-s-12-mryi5u0d-qhho.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./captura-de-pantalla-2026-07-24-a-la-s-12-mryi5vi7-uc6j.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./captura-de-pantalla-2026-07-24-a-la-s-12-mryi609n-d0p7.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./captura-de-pantalla-2026-07-24-a-la-s-12-mryi60au-1ija.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./captura-de-pantalla-2026-07-24-a-la-s-12-mryi60fq-dn4k.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./images/captura-de-pantalla-2026-07-24-a-la-s-12-mryi5u0d-qhho.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./images/captura-de-pantalla-2026-07-24-a-la-s-12-mryi5vi7-uc6j.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./images/captura-de-pantalla-2026-07-24-a-la-s-12-mryi609n-d0p7.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./images/captura-de-pantalla-2026-07-24-a-la-s-12-mryi60au-1ija.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./images/captura-de-pantalla-2026-07-24-a-la-s-12-mryi60fq-dn4k.png"></image-slot></div>
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-6" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 6" src="./media/cm-d-flashy-sub2-6.webp"></image-slot></div>
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-7" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 7" src="./media/cm-d-flashy-sub2-7.webp"></image-slot></div>
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub2-8" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 8" src="./media/cm-d-flashy-sub2-8.webp"></image-slot></div>
@@ -423,12 +391,12 @@
           </div>
           <p style="font-size: clamp(15px,1.3vw,18px); line-height: 1.65; color: #3a2f4a; max-width: 720px; text-align: justify; text-align-last: left; margin-bottom: 24px; width: 762px; height: 45px">Creación con IA,&nbsp; edición y retoque de imágenes para e-commerce, gestión de catálogo y colecciones, control de visibilidad y categorización de producto en tienda.</p>
           <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:clamp(14px,1.6vw,22px);">
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./camiseta-estampada-con-cuello-en-contras-mryidhyu-vbnp.jpg"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./blusa-asimetrica-manga-larga-mujer-flash-mryidxog-fwn8.jpg"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./chaleco-con-botones-y-frente-asimetrico--mryie9lr-zqj2.jpg"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./buzo-manga-larga-en-contraste-y-con-esta-mryieqp3-aphh.jpg"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./camiseta-baby-tee-bordado-mujer-flashy-m-mryiezli-oeh9.jpg"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-6" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 6" src="./camiseta-baby-tee-bordado-mujer-flashy-m-mryif6qr-wojo.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./images/camiseta-estampada-con-cuello-en-contras-mryidhyu-vbnp.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./images/blusa-asimetrica-manga-larga-mujer-flash-mryidxog-fwn8.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./images/chaleco-con-botones-y-frente-asimetrico--mryie9lr-zqj2.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./images/buzo-manga-larga-en-contraste-y-con-esta-mryieqp3-aphh.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./images/camiseta-baby-tee-bordado-mujer-flashy-m-mryiezli-oeh9.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-6" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 6" src="./images/camiseta-baby-tee-bordado-mujer-flashy-m-mryif6qr-wojo.jpg"></image-slot></div>
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-7" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 7" src="./media/cm-d-flashy-sub3-7.webp"></image-slot></div>
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-8" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 8" src="./media/cm-d-flashy-sub3-8.webp"></image-slot></div>
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub3-9" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 9" src="./media/cm-d-flashy-sub3-9.webp"></image-slot></div>
@@ -448,11 +416,11 @@
           <div style="font-size:clamp(15px,1.3vw,18px); line-height:1.65; color:#3a2f4a; max-width:720px; text-align:justify; text-align-last:left; margin-bottom:24px;"><p class="font-claude-response-body break-words whitespace-normal" dir="ltr">Diseño de piezas para punto de venta (afiches, exhibidores, señalética de tienda) alineadas a campañas de temporada y mecánicas promocionales.</p>
 <h3 dir="ltr" class="text-text-100 mt-3 -mb-1 text-[1.125rem] font-bold"></h3></div>
           <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:clamp(14px,1.6vw,22px);">
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./flashy-pop-1.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./flashy-pop-2.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./flashy-pop-3.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./flashy-pop-4.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./flashy-pop-5.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./images/flashy-pop-1.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./images/flashy-pop-2.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./images/flashy-pop-3.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./images/flashy-pop-4.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub4-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./images/flashy-pop-5.png"></image-slot></div>
             
             
             
@@ -465,16 +433,16 @@
           </div>
           <div style="font-size:clamp(15px,1.3vw,18px); line-height:1.65; color:#3a2f4a; max-width:720px; text-align:justify; text-align-last:left; margin-bottom:24px;"><p class="font-claude-response-body break-words whitespace-normal" dir="ltr">Diseño de piezas visuales para Instagram y otras plataformas: carruseles, posts de campaña y contenido gráfico alineado a la identidad de marca.&nbsp;<span style="font-size: clamp(15px, 1.3vw, 18px); -webkit-text-stroke: 0.02em currentcolor;">Diseño de piezas visuales para el sitio: banners, imágenes de colección y gráficas de producto para campañas de venta.</span></p></div>
           <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:clamp(14px,1.6vw,22px);">
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./flashy-dig-1.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./flashy-dig-2.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./flashy-dig-3.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./flashy-dig-4.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./flashy-dig-5.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-6" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 6" src="./flashy-dig-6.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-7" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 7" src="./flashy-dig-7.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-8" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 8" src="./flashy-dig-8.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-9" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 9" src="./flashy-dig-9.png"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-10" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 10" src="./flashy-dig-10.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./images/flashy-dig-1.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./images/flashy-dig-2.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./images/flashy-dig-3.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./images/flashy-dig-4.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./images/flashy-dig-5.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-6" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 6" src="./images/flashy-dig-6.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-7" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 7" src="./images/flashy-dig-7.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-8" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 8" src="./images/flashy-dig-8.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-9" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 9" src="./images/flashy-dig-9.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-flashy-sub5-10" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 10" src="./images/flashy-dig-10.png"></image-slot></div>
             
             
             
@@ -697,11 +665,11 @@
           </div>
           <p style="font-size: clamp(15px,1.3vw,18px); line-height: 1.5; color: #3a2f4a; max-width: 720px; text-align: justify; text-align-last: left; margin-bottom: 24px">Estos empaques salieron a la venta en Febrero 2023, y serán fueron la colección principal de la fecha. Esta linea se compone por cuatro par de medias, HotDog, Queso, Pizza y Sandwich. Estos empaques reflejan un empaque de comida rápida y con el dobles de las medias hacen alusión a la comida dentro del empaque.</p>
           <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:clamp(14px,1.6vw,22px);">
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./img_1512-mryanqt5-y8k7.jpg"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./img_1514-mryanrym-nxa1.jpg"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./img_1515-mryant6e-0fqx.jpg"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./img_1519-mryao090-ck95.jpg"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./img_1518-mryanvfa-yezk.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-1" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 1" src="./images/img_1512-mryanqt5-y8k7.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-2" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 2" src="./images/img_1514-mryanrym-nxa1.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./images/img_1515-mryant6e-0fqx.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./images/img_1519-mryao090-ck95.jpg"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-campanas-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./images/img_1518-mryanvfa-yezk.jpg"></image-slot></div>
             
             
             
@@ -753,7 +721,7 @@
             
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-pop-3" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 3" src="./media/cm-d-crystal-pop-3.webp"></image-slot></div>
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-pop-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 4" src="./media/cm-d-crystal-pop-4.webp"></image-slot></div>
-            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-pop-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./029496_32317d905ee3445a8dc842344f576b4d--mryd9svn-q3eu.png"></image-slot></div>
+            <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-pop-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 5" src="./images/029496_32317d905ee3445a8dc842344f576b4d--mryd9svn-q3eu.png"></image-slot></div>
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-pop-6" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 6" src="./media/cm-d-crystal-pop-6.webp"></image-slot></div>
             <div style="position:relative; aspect-ratio:4/5; border-radius:18px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-crystal-pop-7" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Foto 7" src="./media/cm-d-crystal-pop-7.webp"></image-slot></div>
             
@@ -862,8 +830,8 @@
 
         <h3 style="font-family:'Anton',sans-serif; font-size:clamp(22px,2.4vw,32px); text-transform:uppercase; margin:clamp(44px,5vw,68px) 0 16px; color:#1A1430;">Más imágenes</h3>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:clamp(16px,2vw,28px);">
-          <div style="position:relative; aspect-ratio:4/5; border-radius:20px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-ohra-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Imagen extra" src="./029496_11484cf5afc6473aa884538e7c67fdc9--mrydy83m-mc9v.png"></image-slot></div>
-          <div style="position:relative; aspect-ratio:4/5; border-radius:20px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-ohra-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Imagen extra" src="./029496_340111dea10d4908aa3169cf8becc4e0--mrydycko-hwc9.png"></image-slot></div>
+          <div style="position:relative; aspect-ratio:4/5; border-radius:20px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-ohra-4" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Imagen extra" src="./images/029496_11484cf5afc6473aa884538e7c67fdc9--mrydy83m-mc9v.png"></image-slot></div>
+          <div style="position:relative; aspect-ratio:4/5; border-radius:20px; overflow:hidden; border:3px solid #1A1430;"><image-slot id="cm-d-ohra-5" style="position:absolute; inset:0; width:100%; height:100%;" shape="rect" placeholder="Imagen extra" src="./images/029496_340111dea10d4908aa3169cf8becc4e0--mrydycko-hwc9.png"></image-slot></div>
           
         </div>
         
@@ -1062,286 +1030,6 @@
   </div>
 
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  componentDidMount() {
-    // ---- Scroll progress ----
-    const bar = this._bar;
-    const onScroll = () => {
-      const h = document.documentElement.scrollHeight - window.innerHeight;
-      const p = h > 0 ? (window.scrollY / h) * 100 : 0;
-      if (bar) bar.style.width = p + '%';
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    this._onScroll = onScroll;
 
-    // ---- Rotating headline word ----
-    const rot = this._rotator;
-    if (rot) {
-      const words = ['CONECTA', 'VENDE', 'ENAMORA', 'BRILLA'];
-      let i = 0;
-      this._rotTimer = setInterval(() => {
-        rot.classList.remove('cm-word-in');
-        rot.classList.add('cm-word-out');
-        setTimeout(() => {
-          i = (i + 1) % words.length;
-          rot.textContent = words[i];
-          rot.classList.remove('cm-word-out');
-          rot.classList.add('cm-word-in');
-        }, 380);
-      }, 2200);
-    }
-
-    // ---- Reveal + count-up + image reveal via IntersectionObserver ----
-    const reveals = Array.from(document.querySelectorAll('[data-reveal]'));
-    reveals.forEach((el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(34px)';
-      el.style.transition = 'opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1)';
-    });
-    document.querySelectorAll('[data-img-reveal]').forEach((el) => {
-      el.style.clipPath = 'inset(0 0 100% 0)';
-      el.style.transition = 'clip-path 1s cubic-bezier(.16,1,.3,1)';
-    });
-
-    const fmt = (n, sep) => sep ? n.toLocaleString('en-US') : String(n);
-    const runCount = (el) => {
-      const to = parseInt(el.getAttribute('data-count-to'), 10) || 0;
-      const sep = el.getAttribute('data-count-sep') === '1';
-      const suf = el.getAttribute('data-count-suffix') || '';
-      const dur = 1600;
-      const start = performance.now();
-      const tick = (now) => {
-        const t = Math.min(1, (now - start) / dur);
-        const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = fmt(Math.round(to * eased), sep) + suf;
-        if (t < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
-
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          const el = e.target;
-          if (el.hasAttribute('data-reveal')) { el.style.opacity = '1'; el.style.transform = 'none'; }
-          if (el.hasAttribute('data-img-reveal')) { el.style.clipPath = 'inset(0 0 0% 0)'; }
-          if (el.hasAttribute('data-count')) runCount(el);
-          io.unobserve(el);
-        });
-      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-      reveals.forEach((el) => io.observe(el));
-      document.querySelectorAll('[data-img-reveal]').forEach((el) => io.observe(el));
-      document.querySelectorAll('[data-count]').forEach((el) => io.observe(el));
-      this._io = io;
-    } else {
-      reveals.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
-      document.querySelectorAll('[data-img-reveal]').forEach((el) => { el.style.clipPath = 'none'; });
-      document.querySelectorAll('[data-count]').forEach(runCount);
-    }
-
-    // ---- Sparkle cursor ----
-    const layer = this._cursor;
-    const fine = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
-    if (layer && fine) {
-      const palette = ['#FF2D9E', '#7B3CFF', '#D7FF00', '#00C9AE', '#FF8A00', '#FFC1E8'];
-      const glyphs = ['✦', '✧', '★', '✩', '❋', '✸', '+'];
-      let last = 0;
-      const spawn = (x, y) => {
-        const count = 1 + Math.floor(Math.random() * 2);
-        for (let k = 0; k < count; k++) {
-          const s = document.createElement('span');
-          s.textContent = glyphs[(Math.random() * glyphs.length) | 0];
-          const size = 9 + Math.random() * 15;
-          const jx = (Math.random() - 0.5) * 14;
-          const jy = (Math.random() - 0.5) * 14;
-          s.style.cssText = 'position:absolute; left:' + (x + jx) + 'px; top:' + (y + jy) + 'px; font-size:' + size + 'px; line-height:1; color:' + palette[(Math.random() * palette.length) | 0] + '; pointer-events:none; will-change:transform,opacity; text-shadow:0 0 8px rgba(255,255,255,0.6); filter:drop-shadow(0 0 3px rgba(255,255,255,0.35));';
-          layer.appendChild(s);
-          const dx = (Math.random() - 0.5) * 54;
-          const dy = 14 + Math.random() * 40;
-          const rot = (Math.random() - 0.5) * 260;
-          const dur = 950 + Math.random() * 450;
-          s.animate([
-            { transform: 'translate(-50%,-50%) scale(0) rotate(0deg)', opacity: 0 },
-            { transform: 'translate(calc(-50% + ' + (dx * 0.32) + 'px), calc(-50% + ' + (dy * 0.28) + 'px)) scale(1.12) rotate(' + (rot * 0.35) + 'deg)', opacity: 1, offset: 0.22 },
-            { transform: 'translate(calc(-50% + ' + (dx * 0.7) + 'px), calc(-50% + ' + (dy * 0.62) + 'px)) scale(0.82) rotate(' + (rot * 0.72) + 'deg)', opacity: 0.95, offset: 0.6 },
-            { transform: 'translate(calc(-50% + ' + dx + 'px), calc(-50% + ' + dy + 'px)) scale(0) rotate(' + rot + 'deg)', opacity: 0 }
-          ], { duration: dur, easing: 'cubic-bezier(.25,.8,.35,1)' }).onfinish = () => s.remove();
-        }
-      };
-      const move = (ev) => {
-        const now = performance.now();
-        if (now - last < 20) return;
-        last = now;
-        spawn(ev.clientX, ev.clientY);
-      };
-      window.addEventListener('mousemove', move, { passive: true });
-      this._curCleanup = () => { window.removeEventListener('mousemove', move); };
-    }
-
-    // ---- Card hover: scale image + arrow + lifted shadow ----
-    document.querySelectorAll('[data-card]').forEach((card) => {
-      const slot = card.querySelector('image-slot');
-      const arrow = card.querySelector('[data-arrow]');
-      const box = card.querySelector('[data-tilt]');
-      const ver = card.querySelector('[data-ver]');
-      const enter = () => {
-        if (slot) { slot.style.transform = 'scale(1.06)'; slot.style.transition = 'transform .6s cubic-bezier(.16,1,.3,1)'; }
-        if (arrow) arrow.style.transform = 'translate(5px,-5px)';
-        if (box) box.style.boxShadow = '12px 12px 0 #FF2D9E';
-        if (ver) { ver.style.opacity = '1'; ver.style.transform = 'translate(-50%,-50%) scale(1)'; }
-      };
-      const leave = () => {
-        if (slot) slot.style.transform = 'scale(1)';
-        if (arrow) arrow.style.transform = 'none';
-        if (box) { box.style.boxShadow = '6px 6px 0 #1A1430'; box.style.transform = 'none'; }
-        if (ver) { ver.style.opacity = '0'; ver.style.transform = 'translate(-50%,-50%) scale(0.9)'; }
-      };
-      card.addEventListener('mouseenter', enter);
-      card.addEventListener('mouseleave', leave);
-      // 3D tilt
-      if (box && fine) {
-        box.style.transformStyle = 'preserve-3d';
-        box.style.transition = 'box-shadow .3s ease, transform .15s ease';
-        card.addEventListener('mousemove', (ev) => {
-          const r = box.getBoundingClientRect();
-          const px = (ev.clientX - r.left) / r.width - 0.5;
-          const py = (ev.clientY - r.top) / r.height - 0.5;
-          box.style.transform = `perspective(900px) rotateY(${px * 7}deg) rotateX(${-py * 7}deg)`;
-        });
-      }
-    });
-
-    // ---- Project detail subpages (overlay) ----
-    const overlay = this._detail;
-    if (overlay) {
-      const panels = overlay.querySelectorAll('[data-detail-panel]');
-      const openDetail = (key) => {
-        let found = false;
-        panels.forEach((p) => {
-          const match = p.id === 'cm-detail-' + key;
-          p.style.display = match ? 'block' : 'none';
-          if (match) found = true;
-        });
-        if (!found) return;
-        overlay.style.display = 'block';
-        overlay.scrollTop = 0;
-        document.body.style.overflow = 'hidden';
-      };
-      const closeDetail = () => {
-        overlay.style.display = 'none';
-        document.body.style.overflow = '';
-      };
-      this._closeDetail = closeDetail;
-      document.querySelectorAll('[data-card]').forEach((card) => {
-        card.addEventListener('click', (ev) => {
-          ev.preventDefault();
-          const s = card.querySelector('image-slot');
-          const key = s ? s.id.replace('cm-proj-', '') : null;
-          if (key) openDetail(key);
-        });
-      });
-      overlay.querySelectorAll('[data-detail-close]').forEach((b) => {
-        b.addEventListener('click', closeDetail);
-      });
-
-      // Interactive project index: hover preview (follows cursor) + click opens detail
-      const projList = document.querySelector('[data-projlist]');
-      if (projList) {
-        const preview = projList.querySelector('[data-preview]');
-        const plabel = projList.querySelector('[data-preview-label]');
-        let praf = null, ptx = 0, pty = 0, pcx = 0, pcy = 0;
-        const ploop = () => {
-          pcx += (ptx - pcx) * 0.2; pcy += (pty - pcy) * 0.2;
-          if (preview) { preview.style.left = pcx + 'px'; preview.style.top = pcy + 'px'; }
-          praf = requestAnimationFrame(ploop);
-        };
-        const pmove = (e) => {
-          const r = projList.getBoundingClientRect();
-          ptx = e.clientX - r.left; pty = e.clientY - r.top;
-          if (!praf) { pcx = ptx; pcy = pty; ploop(); }
-        };
-        projList.addEventListener('mousemove', pmove);
-        projList.querySelectorAll('[data-prow]').forEach((row) => {
-          const nm = row.querySelector('[data-rowname]');
-          const ar = row.querySelector('[data-rowarrow]');
-          const accent = row.getAttribute('data-accent');
-          const key = row.getAttribute('data-project');
-          row.addEventListener('mouseenter', () => {
-            if (preview) {
-              const cover = document.getElementById('cm-d-' + key + '-cover');
-              const cimg = cover && cover.shadowRoot && cover.shadowRoot.querySelector('img');
-              const csrc = cimg && cimg.getAttribute('src');
-              preview.style.backgroundImage = (csrc && /^data:image/.test(csrc)) ? 'url("' + csrc + '")' : row.getAttribute('data-grad');
-              preview.style.opacity = '1';
-              preview.style.transform = 'translate(18px,18px) scale(1)';
-            }
-            if (plabel) plabel.textContent = row.getAttribute('data-name');
-            if (nm) { nm.style.color = accent; nm.style.transform = 'translateX(12px)'; }
-            if (ar) { ar.style.color = accent; ar.style.transform = 'translateX(6px)'; }
-            row.style.background = 'rgba(26,20,48,0.03)';
-          });
-          row.addEventListener('mouseleave', () => {
-            if (preview) { preview.style.opacity = '0'; preview.style.transform = 'translate(18px,18px) scale(0.92)'; }
-            if (nm) { nm.style.color = '#1A1430'; nm.style.transform = 'none'; }
-            if (ar) { ar.style.color = '#c3bccd'; ar.style.transform = 'none'; }
-            row.style.background = 'transparent';
-          });
-          row.addEventListener('click', (ev) => { ev.preventDefault(); if (key) openDetail(key); });
-        });
-        this._projCleanup = () => { if (praf) cancelAnimationFrame(praf); projList.removeEventListener('mousemove', pmove); };
-      }
-      this._onKey = (ev) => { if (ev.key === 'Escape' && overlay.style.display === 'block') closeDetail(); };
-      window.addEventListener('keydown', this._onKey);
-    }
-
-    // ---- Experience row hover ----
-    document.querySelectorAll('[data-exp]').forEach((row) => {
-      row.addEventListener('mouseenter', () => { row.style.background = 'rgba(255,255,255,0.10)'; row.style.transform = 'translateX(10px)'; });
-      row.addEventListener('mouseleave', () => { row.style.background = 'transparent'; row.style.transform = 'none'; });
-    });
-
-    // ---- Magnetic CTA ----
-    document.querySelectorAll('[data-magnet]').forEach((btn) => {
-      if (!fine) return;
-      btn.addEventListener('mousemove', (ev) => {
-        const r = btn.getBoundingClientRect();
-        const mx = ev.clientX - r.left - r.width / 2;
-        const my = ev.clientY - r.top - r.height / 2;
-        btn.style.transform = `translate(${mx * 0.3}px, ${my * 0.4}px)`;
-      });
-      btn.addEventListener('mouseleave', () => { btn.style.transform = 'none'; });
-    });
-
-    // ---- Contact link hover ----
-    document.querySelectorAll('[data-link]').forEach((l) => {
-      l.addEventListener('mouseenter', () => { l.style.transform = 'translateX(8px)'; });
-      l.addEventListener('mouseleave', () => { l.style.transform = 'none'; });
-    });
-  }
-
-  componentWillUnmount() {
-    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
-    if (this._io) this._io.disconnect();
-    if (this._rotTimer) clearInterval(this._rotTimer);
-    if (this._curCleanup) this._curCleanup();
-    if (this._onKey) window.removeEventListener('keydown', this._onKey);
-    if (this._projCleanup) this._projCleanup();
-    if (document && document.body) document.body.style.overflow = '';
-  }
-
-  renderVals() {
-    return {
-      progressRef: (el) => { this._bar = el; },
-      rotatorRef: (el) => { this._rotator = el; },
-      cursorRef: (el) => { this._cursor = el; },
-      detailRef: (el) => { this._detail = el; },
-    };
-  }
-}
-</script>
 </body>
 </html>

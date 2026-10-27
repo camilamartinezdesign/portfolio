@@ -75,6 +75,13 @@
 
   function load() {
     if (loadP) return loadP;
+    // The sidecar only exists inside the Claude Design editor. On the built
+    // site every slot carries a `src`, so skip the fetch (and its 404).
+    if (!(window.omelette && window.omelette.writeFile)) {
+      loaded = true;
+      loadP = Promise.resolve();
+      return loadP;
+    }
     loadP = fetch(STATE_FILE)
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {
